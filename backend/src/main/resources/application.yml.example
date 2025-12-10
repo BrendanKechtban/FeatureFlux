@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: featureflux-backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/featureflux
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      timeout: 2000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+
+server:
+  port: ${SERVER_PORT:8080}
+  cors:
+    allowed-origins: ${CORS_ORIGINS:http://localhost:3000}
+    allowed-methods: GET,POST,PUT,DELETE,OPTIONS
+    allowed-headers: "*"
+    allow-credentials: true
+
+logging:
+  level:
+    com.featureflux: ${LOG_LEVEL:INFO}
+    org.springframework.data.redis: ${LOG_LEVEL:INFO}
+
