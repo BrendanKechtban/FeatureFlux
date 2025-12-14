@@ -38,9 +38,7 @@ export default function Home() {
     }
     try {
       setUser(JSON.parse(userData));
-      // Only load flags if authenticated
       loadFlags();
-      // Poll for updates every 5 seconds
       const interval = setInterval(loadFlags, 5000);
       return () => clearInterval(interval);
     } catch (e) {
