@@ -35,7 +35,7 @@ Welcome to FeatureFlux. A production-ready feature flag platform built with Spri
 - PostgreSQL (persistent storage)
 - Redis (caching layer)
 - Spring Data JPA
-- Spring WebSocket (for real-time updates)
+- Spring WebSocket (for real time updates)
 
 ### Frontend
 - Next.js 
