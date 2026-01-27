@@ -30,7 +30,6 @@ public class DataInitializer implements CommandLineRunner {
             log.info("Created default admin user: admin/admin123");
         }
 
-        // Create default viewer user if it doesn't exist
         if (userRepository.findByUsername("viewer").isEmpty()) {
             User viewer = User.builder()
                     .username("viewer")
