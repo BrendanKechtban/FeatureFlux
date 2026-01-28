@@ -98,7 +98,7 @@ export default function Home() {
         {showCreateModal && (
           <CreateFlagModal
             onClose={() => setShowCreateModal(false)}
-            onCreated={handleFlagCreated}
+            //onCreated={handleFlagCreated}
           />
         )}
       </main>
