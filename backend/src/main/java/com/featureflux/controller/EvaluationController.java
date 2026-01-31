@@ -43,7 +43,6 @@ public class EvaluationController {
         response.setUserId(userId);
         response.setEnabled(enabled);
         response.setBucket(calculateBucket(flagKey, userId));
-        
         return ResponseEntity.ok(response);
     }
 
