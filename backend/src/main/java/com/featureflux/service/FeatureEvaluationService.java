@@ -121,7 +121,7 @@ public class FeatureEvaluationService {
     public void evictCache(String flagKey) {
         // Also manually evict from Redis
         String pattern = EVALUATION_CACHE_PREFIX + flagKey + ":*";
-        // Note: Redis pattern deletion requires SCAN in production, simplified here
+    
         log.info("Evicting cache for flag: {}", flagKey);
     }
 
