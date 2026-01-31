@@ -26,7 +26,7 @@ public class EvaluationController {
         response.setFlagKey(request.getFlagKey());
         response.setUserId(request.getUserId());
         response.setEnabled(enabled);
-        // Calculate bucket for display
+        
         response.setBucket(calculateBucket(request.getFlagKey(), request.getUserId()));
         
         return ResponseEntity.ok(response);
