@@ -80,11 +80,9 @@ public class KillSwitchService {
             return cached;
         }
         
-        
         Optional<KillSwitch> killSwitch = killSwitchRepository.findByFlagKey(flagKey);
         boolean active = killSwitch.map(KillSwitch::getActive).orElse(false);
         
-    
         redisTemplate.opsForValue().set(cacheKey, active, CACHE_TTL_SECONDS, TimeUnit.SECONDS);
         
         return active;
