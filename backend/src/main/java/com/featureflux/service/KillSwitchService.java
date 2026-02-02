@@ -80,7 +80,7 @@ public class KillSwitchService {
             return cached;
         }
         
-        // Cache miss - check database
+        
         Optional<KillSwitch> killSwitch = killSwitchRepository.findByFlagKey(flagKey);
         boolean active = killSwitch.map(KillSwitch::getActive).orElse(false);
         
