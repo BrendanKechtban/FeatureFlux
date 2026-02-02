@@ -39,7 +39,7 @@ public class KillSwitchService {
         
         KillSwitch saved = killSwitchRepository.save(killSwitch);
         
-        // Cache in Redis for fast lookup
+        
         String cacheKey = KILL_SWITCH_CACHE_PREFIX + flagKey;
         redisTemplate.opsForValue().set(cacheKey, true, CACHE_TTL_SECONDS, TimeUnit.SECONDS);
         
