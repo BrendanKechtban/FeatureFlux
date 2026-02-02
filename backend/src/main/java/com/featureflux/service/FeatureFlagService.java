@@ -56,7 +56,6 @@ public class FeatureFlagService {
         FeatureFlag existing = repository.findById(flag.getId())
                 .orElseThrow(() -> new IllegalArgumentException("Feature flag not found"));
         
-        // Prevent key changes
         if (!existing.getKey().equals(flag.getKey())) {
             throw new IllegalArgumentException("Cannot change feature flag key");
         }
