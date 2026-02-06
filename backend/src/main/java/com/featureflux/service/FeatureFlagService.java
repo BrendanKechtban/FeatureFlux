@@ -110,7 +110,6 @@ public class FeatureFlagService {
     }
     
     private void evictEvaluationCache(String flagKey) {
-        // Evict cache entries for this flag
         log.info("Evicting evaluation cache for flag: {}", flagKey);
     }
 }
