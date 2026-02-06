@@ -63,7 +63,6 @@ public class KillSwitchService {
         
         KillSwitch saved = killSwitchRepository.save(killSwitch);
         
-        // Remove from Redis cache
         String cacheKey = KILL_SWITCH_CACHE_PREFIX + flagKey;
         redisTemplate.delete(cacheKey);
         
