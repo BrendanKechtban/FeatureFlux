@@ -72,7 +72,7 @@ public class KillSwitchService {
     }
 
     public boolean isKillSwitchActive(String flagKey) {
-        // Check Redis cache first
+        
         String cacheKey = KILL_SWITCH_CACHE_PREFIX + flagKey;
         Boolean cached = (Boolean) redisTemplate.opsForValue().get(cacheKey);
         
