@@ -111,7 +111,6 @@ public class FeatureFlagService {
     
     private void evictEvaluationCache(String flagKey) {
         // Evict cache entries for this flag
-        // Note: Pattern deletion requires SCAN in production
         log.info("Evicting evaluation cache for flag: {}", flagKey);
     }
 }
