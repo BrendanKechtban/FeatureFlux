@@ -119,7 +119,6 @@ public class FeatureEvaluationService {
 
     @CacheEvict(value = "evaluations", key = "#flagKey + ':*'")
     public void evictCache(String flagKey) {
-        // Also manually evict from Redis
         String pattern = EVALUATION_CACHE_PREFIX + flagKey + ":*";
     
         log.info("Evicting cache for flag: {}", flagKey);
